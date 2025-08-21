@@ -1,0 +1,58 @@
+.detail-page {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: "Pretendard", system-ui, sans-serif;
+}
+
+/* 뒤로가기 버튼 */
+.detail-back {
+  display: inline-block;
+  margin: 20px auto;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* PNG 묶음 */
+.detail-col {
+  width: 100%;
+  max-width: 1000px; /* 원본보다 너무 크지 않게 제한 */
+  margin: 0 auto;
+  margin-bottom: 4%;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 각 패널 */
+.panel {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 0; /* 이미지 사이 공백 제거 */
+}
+
+/* PNG 기본 */
+.panel__base {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none; /* 그림자 제거해서 경계 없애기 */
+  border-radius: 0; /* 둥근 모서리 제거 */
+}
+
+/* 첫 PNG 위 GIF 오버레이 */
+.panel--has-gif .panel__gif {
+  position: absolute;
+  width: auto;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+  transform: scale(2.5); /*가운데 정렬 + 크기 1.3배 확대*/
+}

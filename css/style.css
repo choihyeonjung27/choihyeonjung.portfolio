@@ -1,0 +1,445 @@
+@charset "utf-8";
+
+/* ================================
+   기본 변수
+================================ */
+:root {
+  --header-height: 130px; /* PC 기준 메뉴 높이 */
+  --menu-gap: 10rem; /* 메뉴 간격 */
+  --menu-font-size: 3rem; /* 메뉴 글씨 크기 */
+  --main-width: 70%; /* 메인 폭 (이미지/메뉴 기준) */
+}
+
+/* ================================
+   레이아웃 기본
+================================ */
+.wrap {
+  position: relative;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ================================
+   섹션 위치 (메뉴바 가림 방지)
+================================ */
+section {
+  scroll-margin-top: calc(var(--header-height) + 50px);
+}
+
+/* ================================
+   상단 메뉴바
+================================ */
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+.menu-inner {
+  width: 70%;
+  margin: 0 auto;
+  height: 130px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 0 1% 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.logobox a {
+  font-family: "AnguitaSans", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-style: italic;
+  padding-top: 2rem;
+}
+
+.menulist {
+  display: flex;
+  align-items: flex-end;
+}
+
+.menulist ul {
+  display: flex;
+  gap: var(--menu-gap);
+  margin: 0;
+  padding: 0;
+}
+
+.menulist ul li a {
+  font-family: "AnguitaSans", sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  text-decoration: none;
+  color: #000;
+  padding-top: 2rem;
+  line-height: 1.8;
+}
+
+/* hover & active 상태에서 색상 변경 */
+.menulist ul li a:hover,
+.menulist ul li a.active {
+  color: #c2def8;
+}
+
+/* 밑줄 애니메이션 (글자 폭 만큼) */
+.menulist ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* 글자 바로 밑 */
+  width: 0;
+  height: 2px;
+  background-color: #c2def8;
+  transition: width 0.3s ease;
+}
+
+/* hover & active 시 글자 길이 만큼 밑줄 확장 */
+.menulist ul li a:hover::after,
+.menulist ul li a.active::after {
+  width: 100%;
+}
+
+/* ================================
+   Home 이미지 영역
+================================ */
+.home {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-start; /* 위쪽에 붙이기 */
+  margin: 6% 0 6% 0;
+  height: calc(100vh - var(--menu-inner-height)); /* 메뉴 높이만큼 제외 */
+  scroll-margin-top: 200px; /* 기존보다 더 크게 */
+}
+.home img {
+  display: block;
+  width: var(--main-width);
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* ================================
+   Main 영역
+================================ */
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* About Me */
+.aboutme {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 70%;
+  margin: 0 auto;
+  gap: 0;
+  margin-bottom: 5%;
+  background-color: rgba(225, 238, 250, 0.5);
+  scroll-margin-top: 130px;
+}
+
+.introduce {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 0;
+  box-sizing: border-box; /* padding 포함 계산 */
+  /* padding: 0 8%; */
+}
+.about-text {
+  padding: 40px 100px;
+  box-sizing: border-box; /* padding 포함해서 width 계산 */
+}
+.about-text h2 {
+  margin: 2% 0;
+}
+.about-text h3 {
+  margin-bottom: 4%;
+}
+.about-text p {
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 4%;
+}
+
+.about-img {
+  position: relative;
+  width: 40%; /* 전체의 40%까지만 차지 */
+  display: flex;
+  justify-content: center; /* 이미지 가운데 */
+  align-items: center;
+}
+.about-img img {
+  width: 85%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  margin-right: 100px;
+}
+
+.contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 1.5% 0 10% 0;
+}
+.profile {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-radius: 10px;
+  gap: 95px;
+}
+.profile > div {
+  flex: 1;
+  text-align: center;
+}
+.profile > div > h4 {
+  font-family: "AnguitaSans", "Helvetica Neue", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.profile div ul li {
+  white-space: nowrap; /* 줄바꿈 금지 */
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.5em;
+  margin-bottom: 4%;
+}
+
+/* ========== Project ========== */
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 120px; /* 기존보다 더 크게 */
+}
+.project h2 {
+  margin-top: 40px;
+}
+
+.project-filter {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 20px 0 12px;
+}
+.project-filter li a {
+  font-family: "Pretendard", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #111;
+}
+.project-filter li.on a {
+  font-weight: 700;
+  border-bottom: 2px solid #111;
+}
+
+/* 카드/썸네일 */
+.project-card {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+}
+.project-card .thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #eee center/cover no-repeat;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.project-card p {
+  font-family: "Pretendard", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 8px;
+}
+.project-filter li a {
+  font-family: "Pretendard", sans-serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #111; /* 기본 색상 */
+  transition: color 0.3s ease; /* 부드럽게 변환 */
+}
+/* Project 그리드 */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 */
+  gap: 2.4rem;
+  width: 70%;
+  margin: 3% auto 6%; /* 가운데 정렬 */
+}
+
+/* 카드가 그리드 셀 너비에 맞추도록 */
+.project-card {
+  width: 100%;
+}
+
+/* 선택된 상태(on) + hover 시 */
+.project-filter li.on a,
+.project-filter li a:hover {
+  color: #c2def8; /* 원하는 포인트 색 */
+  font-weight: 700; /* 강조 효과 */
+  border-bottom: 2px solid #c2def8; /* 밑줄 색상도 동일하게 */
+}
+
+/* ========== Modal(중앙) ========== */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 9999;
+}
+.modal.is-open {
+  display: flex;
+}
+.modal__dialog {
+  position: relative;
+  width: min(1100px, 92vw);
+  background: #0b0d10;
+  color: #fff;
+  border: 1px solid #2a2f36;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+}
+.modal__media {
+  background: #000;
+}
+.modal__media video {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  display: block;
+}
+/* 배경 클릭 닫기용 (덮개가 전체를 차도록) */
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+}
+.modal__meta {
+  padding: 16px 20px;
+}
+.modal__meta .meta__row {
+  opacity: 0.8;
+  margin: 0.25rem 0;
+}
+.modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 50; /* ★ 영상보다 위로 */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55); /* 잘 보이도록 */
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+}
+.modal__close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8%;
+}
+.contact-menu {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin: 0 auto;
+  margin: 7% 0 13% 0;
+}
+.contact-menu ul {
+  display: flex; /* 가로 배치 */
+  flex-wrap: wrap; /* 화면 좁아지면 줄바꿈 */
+  justify-content: center; /* 가운데 정렬 */
+  gap: 150px; /* 메뉴 사이 간격 */
+  padding: 0;
+  margin: 0;
+}
+.contact-menu li {
+  display: flex;
+  flex-direction: column; /* 아이콘/텍스트는 세로 정렬 */
+  align-items: center;
+  text-align: center;
+}
+.contact-menu li span {
+  font-family: "AnguitaSans", sans-serif;
+  font-size: 4rem;
+  margin-bottom: 15px;
+}
+.contact-menu li a {
+  font-family: "Pretendard", sans-serif;
+  font-size: 3rem;
+}
+.contact-menu li img {
+  width: 100px;
+}
+.contact-menu li a:hover {
+  color: #c2def8;
+}
+.footer-menu {
+  display: flex;
+  justify-content: space-between; /* 양 끝 배치 */
+  align-items: center;
+  width: 80%; /* 가운데 여백 확보 */
+  margin: 20px auto; /* 위아래 여백 */
+  padding: 20px 0;
+  gap: 20px; /* 로고-카피 간 간격 */
+}
+.ft-logo {
+  font-family: "AnguitaSans";
+  padding-left: 10vh;
+  padding-bottom: 2vh;
+}
+.copy {
+  font-family: "Pretendard", sans-serif;
+  font-size: 1.5rem;
+  padding-right: 10vh;
+}

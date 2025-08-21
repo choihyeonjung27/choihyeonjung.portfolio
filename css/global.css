@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* ================================
+   폰트 임포트
+================================ */
+@font-face {
+  font-family: "AnguitaSans";
+  src: url("fonts/Fontspring-DEMO-anguitasans-medium.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AnguitaSans";
+  src: url("fonts/Fontspring-DEMO-anguitasans-boldit.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("fonts/Pretendard-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ================================
+   CSS 변수 (메뉴 높이, 색상 등)
+================================ */
+:root {
+  --header-height: 100px;
+  --main-font-size: 10px;
+  --primary-color: #000;
+  --bg-color: rgba(250, 250, 250, 0.8);
+  --menu-gap: 5rem;
+  --menu-font-size: 1.4rem;
+}
+
+/* ================================
+   기본 리셋
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: var(--main-font-size);
+  line-height: 1.5;
+  color: var(--primary-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  letter-spacing: -0.23px;
+  word-break: break-word;
+  /* padding-top: 100px; */
+}
+
+html {
+  height: auto; /* 불필요한 110vh 제거 */
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+}
+
+/* ================================
+   제목 스타일
+================================ */
+h2 {
+  font-family: "AnguitaSans", "Helvetica Neue", sans-serif;
+  font-size: 8rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h3,
+h4 {
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+h4 {
+  margin-bottom: 6%;
+}

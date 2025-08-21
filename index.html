@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>choihyeonjung-portfolio</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <script src="js/data.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- Header -->
+      <header class="header">
+        <div class="menu">
+          <div class="menu-inner">
+            <!-- Logo -->
+            <div class="logo">
+              <div class="logobox">
+                <a href="#home">Choi HyeonJung</a>
+              </div>
+            </div>
+            <!-- Navigation -->
+            <nav class="menulist">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutme">About Me</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Home Section -->
+      <section id="home" class="home">
+        <img src="images/home3.png" alt="Portfolio Image" />
+      </section>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- About Me Section -->
+        <section id="aboutme" class="aboutme">
+          <div class="introduce">
+            <div class="about-text">
+              <h2>About Me</h2>
+              <h3>
+                안녕하세요. 스토리와 감정을 담아내는 디자인과 영상을 만들고싶은
+                <br />영상편집자 최현정입니다.
+              </h3>
+              <p>
+                디자인과 영상은 단순한 시각 요소를 넘어, 메시지를 전달하고
+                감정을 움직이는 힘을 가진다고 믿습니다. 보육교사로서 행사 영상과
+                신문을 제작하며 디자인과 영상의 매력을 처음 접했고, 그 경험이
+                저를 새로운 도전으로 이끌었습니다.<br /><br />
+                현재는 그래픽과 영상 제작 역량을 체계적으로 배우며, 아이디어를
+                구체적인 결과물로 구현하는 실행력을 키워가고 있습니다. 앞으로는
+                사람들의 마음을 사로잡고 기억에 남는 창의적인 콘텐츠를 만들기
+                위해 끊임없이 도전하겠습니다.
+              </p>
+            </div>
+            <div class="contents">
+              <div class="profile">
+                <div>
+                  <h4>Profile</h4>
+                  <ul>
+                    <li>최현정</li>
+                    <li>1999-09-27</li>
+                    <li>
+                      Daegu,<br />
+                      Republic of Korea
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>Experience</h4>
+                  <ul>
+                    <li>
+                      2021.10~2025.03 | <br />
+                      임마누엘 어린이집 보육교사
+                    </li>
+                    <li>
+                      2020.09~2021.03 | <br />
+                      수성대 호텔조리학과 학과사무실
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4>License</h4>
+                  <ul>
+                    <li>GTQi 일러스트 1급</li>
+                    <li>GTQ 포토샵 1급</li>
+                    <li>한국사능력검정시험 2급</li>
+                    <li>보육교사 2급</li>
+                    <li>중식조리기능사</li>
+                    <li>양식조리기능사</li>
+                    <li>한식조리기능사</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="about-img">
+            <img src="images/photo.jpg" alt="Laptop" />
+          </div>
+        </section>
+
+        <!-- Project -->
+        <section id="project" class="project">
+          <h2>Project</h2>
+
+          <!-- 필터 -->
+          <ul class="project-filter" id="filters">
+            <li class="on"><a href="*">전체보기</a></li>
+            <li><a href=".poster">포스터</a></li>
+            <li><a href=".filming">촬영물</a></li>
+            <li><a href=".motion-graphic">모션그래픽</a></li>
+            <li><a href=".detail">상세페이지</a></li>
+            <li><a href=".interview">인터뷰</a></li>
+            <li><a href=".ad">광고영상</a></li>
+          </ul>
+
+          <!-- 카드가 JS로 자동 렌더링됩니다 -->
+          <div class="project-grid" id="projectGrid"></div>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal" id="projectModal" aria-hidden="true">
+          <div class="modal__backdrop" data-close></div>
+          <div
+            class="modal__dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="mTitle"
+          >
+            <button class="modal__close" aria-label="Close" data-close>
+              &times;
+            </button>
+
+            <div class="modal__media">
+              <video id="mp4Player" controls playsinline></video>
+            </div>
+
+            <div class="modal__meta">
+              <h3 id="mTitle"></h3>
+              <p id="mDesc"></p>
+              <p class="meta__row">
+                <strong>Date</strong> <span id="mDate"></span>
+              </p>
+              <p class="meta__row">
+                <strong>Type</strong> <span id="mType"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Contact Section -->
+      <footer id="contact" class="footer">
+        <h2>Contact</h2>
+        <div class="contact-menu">
+          <ul>
+            <li>
+              <span>PHONE</span>
+              <a href="tel:01040259819" target="_blank">010.4025.9819</a>
+            </li>
+            <li>
+              <span>SNS</span>
+              <a
+                href="https://www.instagram.com/_luna27_._._?igsh=MWJseXRnNTF3NW01OA%3D%3D&utm_source=qr"
+                target="_blank"
+                >_luna27_._._</a
+              >
+            </li>
+            <li>
+              <span>EMAIL</span>
+              <a href="mailto:lunachoi1116@gmail.com" target="_blank"
+                >lunachoi1116@gmail.com</a
+              >
+            </li>
+            <li>
+              <span>KAKAO</span>
+              <a href="https://open.kakao.com/o/s7wKSIxh" target="_blank"
+                ><img src="images/kakao.QR.png" alt="kakao"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-menu">
+          <div class="ft-logo">
+            <div class="logobox">
+              <a href="#home">Choi HyeonJung</a>
+            </div>
+          </div>
+          <div class="copy">
+            copyright 2025 Choi HyeonJung’s PORTFOLIO all rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

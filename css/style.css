@@ -511,3 +511,281 @@ section {
   font-size: 1.5rem;
   padding-right: 10vh;
 }
+
+/* 반응형 미디어쿼리 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* 기본 변수 조정 */
+  :root {
+    --menu-gap: 5rem;
+    --menu-font-size: 2.5rem;
+    --main-width: 85%;
+  }
+
+  /* 상단 메뉴 */
+  .menu-inner {
+    width: 85%;
+    height: 100px; /* 메뉴 높이 축소 */
+  }
+  .logobox a {
+    font-size: 2rem;
+  }
+
+  /* 홈 섹션 */
+  .home {
+    margin-top: 105px; /* 메뉴 높이 조정에 맞춤 */
+  }
+
+  /* About Me 섹션 */
+  .aboutme {
+    width: 85%;
+    flex-direction: column; /* 세로로 변경 */
+    align-items: center;
+    margin-bottom: 8%;
+  }
+  .introduce {
+    width: 100%;
+  }
+  .about-text {
+    padding: 40px 12%; /* 좌우 패딩 줄이기 */
+  }
+  .about-text p {
+    font-size: 1.3rem; /* 폰트 크기 줄이기 */
+  }
+  .about-img {
+    width: 70%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .about-img img {
+    display: none;
+  }
+  .contents {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 5%;
+  }
+  /* About Me 섹션의 .profile 컨테이너를 가로로 정렬 */
+  .profile {
+    display: flex;
+    flex-direction: row; /* 요소를 가로로 나열 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    gap: 100px; /* 요소 사이 간격 조정 */
+    width: 100%; /* 부모 컨테이너에 맞춰 너비 설정 */
+    padding: 0 100px; /* 좌우 여백 추가 */
+  }
+
+  /* .profile 내부의 각 div 요소들이 공간을 균등하게 차지하도록 함 */
+  .profile > div {
+    flex: 1; /* 가로 공간을 균등하게 분배 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+  }
+  .profile > div > h4 {
+    font-size: 2.5rem;
+  }
+  .profile div ul li {
+    font-size: 1.3rem;
+  }
+
+  /* Project 섹션 */
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2열로 변경 */
+    gap: 2rem;
+    width: 85%;
+    margin-bottom: 8%;
+  }
+  .project-card p {
+    font-size: 1.8rem; /* 폰트 크기 줄이기 */
+  }
+
+  /* Contact & Footer */
+  .contact-menu ul {
+    gap: 50px; /* 간격 줄이기 */
+  }
+  .contact-menu li span {
+    font-size: 3rem;
+  }
+  .contact-menu li a {
+    font-size: 2rem;
+  }
+  .footer-menu {
+    width: 90%;
+  }
+  .ft-logo {
+    padding-left: 2vh;
+  }
+  .copy {
+    font-size: 1.3rem;
+    padding-right: 2vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* 전체 레이아웃 너비 및 폰트 크기 조정 */
+  .wrap {
+    width: 100vw;
+  }
+  :root {
+    --header-height: 130px;
+    --menu-gap: 8rem; /* 메뉴 간격을 줄여 글씨가 모이도록 조정 */
+    --menu-font-size: 2rem; /* 메뉴 글씨 크기를 2rem으로 줄이기 */
+    --main-width: 80%; /* 메인 폭(이미지/메뉴 기준)을 80%로 넓혀 양쪽 여백 줄이기 */
+  }
+
+  /* 상단 메뉴바 */
+  .menu {
+    position: static; /* 스크롤 시 고정 해제 */
+  }
+  .menu-inner {
+    width: 80%; /* 기존 값 유지 */
+    margin: 0 auto;
+    height: 130px;
+
+    display: flex;
+    flex-direction: column; /* 가로(row)에서 세로(column)로 정렬 */
+    justify-content: center; /* 전체를 중앙으로 */
+    align-items: center; /* 가로축에서 중앙 정렬 */
+    padding: 0; /* 패딩 초기화 */
+    box-sizing: border-box;
+  }
+  .menulist ul li a {
+    font-size: var(--menu-font-size); /* 변수 사용 */
+    text-decoration: none;
+    color: #000;
+    padding-top: 2rem;
+  }
+  .logobox a {
+    font-size: 2rem;
+  }
+
+  /* Home 섹션 */
+  .home {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 6%;
+    height: calc(100vh - var(--menu-inner-height));
+    padding: 0 10%; /* 좌우에 10%의 여백을 추가하여 이미지를 더 작게 만듦 */
+    box-sizing: border-box; /* 패딩을 포함하여 크기 계산 */
+  }
+  .home img {
+    display: block;
+    width: 100%; /* 부모의 100%를 차지하게 설정 */
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  /* About Me 섹션 */
+  .aboutme {
+    width: 80%;
+    flex-direction: column;
+    padding: 0 10%;
+    scroll-margin-top: 130px;
+  }
+  .introduce {
+    width: 100%;
+  }
+  .about-text {
+    width: 100%; /* 부모 컨테이너에 맞춰 너비 설정 */
+    text-align: center; /* 모든 텍스트를 중앙으로 정렬 */
+    padding: 40px 0;
+    box-sizing: border-box;
+  }
+  .about-text h2 {
+    font-size: 3.5rem;
+    text-align: start;
+  }
+  .about-text h3 {
+    font-size: 1.7rem;
+    text-align: start;
+  }
+  .about-text p {
+    font-size: 1.2rem;
+    text-align: start;
+  }
+  .about-img {
+    width: 90%;
+    margin: 20px 0;
+  }
+  .about-img img {
+    display: none;
+  }
+  .profile {
+    display: flex;
+    flex-direction: row; /* 요소를 가로로 나열 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    text-align: center;
+    gap: 35px;
+  }
+
+  .profile > div {
+    text-align: center;
+  }
+  .profile > div > h4 {
+    font-size: 2.5rem;
+  }
+  .profile div ul li {
+    font-size: 1.2rem;
+  }
+
+  /* Project 섹션 */
+  .project-filter {
+    gap: 1.5rem;
+  }
+  .project-filter li a {
+    font-size: 1.5rem;
+  }
+  .project-grid {
+    grid-template-columns: 1fr; /* 1열로 변경 */
+    width: 90%;
+    gap: 1.5rem;
+  }
+  .project-card p {
+    font-size: 1.5rem;
+  }
+
+  /* Contact & Footer */
+  .contact-menu {
+    flex-direction: column;
+    gap: 20px;
+    margin: 5% 0 10% 0;
+  }
+  .contact-menu ul {
+    display: flex;
+    flex-wrap: wrap; /* 요소가 넘치면 다음 줄로 이동 */
+    justify-content: center; /* 전체 항목을 중앙으로 정렬 */
+    gap: 20px; /* 항목 간 간격 */
+    width: 100%; /* 부모의 너비를 꽉 채우도록 설정 */
+    padding: 0; /* 패딩 초기화 */
+    list-style: none; /* 리스트 점 제거 */
+  }
+  .contact-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(
+      50% - 10px
+    ); /* 한 줄에 2개씩 배치되도록 너비를 계산 (50% - gap) */
+    margin-bottom: 20px; /* 각 줄 하단 여백 추가 */
+  }
+  .contact-menu li span {
+    font-size: 2rem;
+  }
+  .contact-menu li a {
+    font-size: 1.5rem;
+  }
+  .footer-menu {
+    flex-direction: column;
+    width: 90%;
+    padding: 10px 0;
+  }
+  .ft-logo,
+  .copy {
+    padding: 0;
+    font-size: 1.2rem;
+  }
+}

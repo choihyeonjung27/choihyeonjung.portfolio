@@ -398,57 +398,51 @@ section {
   display: block;
 }
 
-/* 설명 영역 박스 */
-#projectModal .modal__meta,
+/* Modal 최종 오버라이드 */
 #projectModal .modal_meta {
-  margin-top: 8px;
-  padding: 16px clamp(16px, 3vw, 28px) 18px;
   background: var(--meta-bg);
   color: var(--meta-fg);
+  padding: 16px clamp(16px, 3vw, 28px) 18px;
   border-radius: 12px;
 }
 
-/* 제목 */
 #projectModal #mTitle {
   font-family: var(--title-font);
   font-size: 3rem;
-  font-weight: 00;
-  letter-spacing: 0.02em;
-  line-height: 1.25;
+  font-weight: 800; /* 00은 무효 → 700/800 사용 */
   color: #c2def8;
+  line-height: 1.25;
   margin: 0 0 0.5rem;
 }
 
-/* 설명 본문 */
 #projectModal #mDesc {
   font-family: var(--body-font);
   font-size: 2rem;
   line-height: 1.7;
-  opacity: 0.95;
   margin: 0;
+  opacity: 0.95;
 }
 
-/* Date / Type 줄 */
-#projectModal .meta__row,
+/* Date / Type 한 줄 */
 #projectModal .meta_row {
   display: flex;
   align-items: baseline;
+  gap: 0.8rem;
   margin-top: 0.6rem;
   font-family: var(--body-font);
-  font-size: 1.8rem;
-  color: var(--meta-sub);
+  font-size: 1.8rem; /* ← 여기만 바꾸면 라벨/값 함께 변경 */
+  color: var(--meta-fg);
 }
-#projectModal .meta__row strong,
+
+/* 라벨을 볼드로 */
 #projectModal .meta_row strong {
-  font-family: var(--body-font);
-  font-size: inherit;
-  font-weight: 700; /* ← 볼드 */
-  color: inherit;
+  font: inherit;
+  font-weight: 700;
   min-width: 4.2rem;
   margin-right: 0.6rem;
 }
 
-/* 값도 부모(.meta_row)에서 물려받게 */
+/* 값은 부모에서 물려받기 */
 #projectModal #mDate,
 #projectModal #mType {
   font: inherit;

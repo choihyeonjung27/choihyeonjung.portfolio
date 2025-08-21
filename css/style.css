@@ -126,9 +126,9 @@ section {
   height: 100vh;
   justify-content: center;
   align-items: flex-start; /* 위쪽에 붙이기 */
-  margin: 6% 0 6% 0;
+  margin-top: 135px;
+  margin-bottom: 6%;
   height: calc(100vh - var(--menu-inner-height)); /* 메뉴 높이만큼 제외 */
-  scroll-margin-top: 200px; /* 기존보다 더 크게 */
 }
 .home img {
   display: block;
@@ -238,7 +238,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  scroll-margin-top: 120px; /* 기존보다 더 크게 */
+  scroll-margin-top: 100px; /* 기존보다 더 크게 */
 }
 .project h2 {
   margin-top: 40px;
@@ -372,13 +372,87 @@ section {
   justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.55); /* 잘 보이도록 */
-  color: #fff;
+  background: rgba(194, 222, 248, 0.8); /* 잘 보이도록 */
+  color: #000;
   font-size: 22px;
   cursor: pointer;
 }
 .modal__close:hover {
   background: rgba(255, 255, 255, 0.22);
+}
+/* ===== Modal 설명 텍스트 커스텀 ===== */
+#projectModal {
+  /* 원하는 스타일값만 바꿔써도 됨 */
+  --meta-bg: rgba(0, 0, 0, 0.9);
+  --meta-fg: #eee;
+  --meta-sub: #bdbdbd;
+  --title-font: "AnguitaSans", "Helvetica Neue", sans-serif;
+  --body-font: "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+/* 플레이어는 꽉 차게 */
+#projectModal #mp4Player,
+#projectModal #ytPlayer {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+}
+
+/* 설명 영역 박스 */
+#projectModal .modal__meta,
+#projectModal .modal_meta {
+  margin-top: 8px;
+  padding: 16px clamp(16px, 3vw, 28px) 18px;
+  background: var(--meta-bg);
+  color: var(--meta-fg);
+  border-radius: 12px;
+}
+
+/* 제목 */
+#projectModal #mTitle {
+  font-family: var(--title-font);
+  font-size: 3rem;
+  font-weight: 00;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  color: #c2def8;
+  margin: 0 0 0.5rem;
+}
+
+/* 설명 본문 */
+#projectModal #mDesc {
+  font-family: var(--body-font);
+  font-size: 2rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  margin: 0;
+}
+
+/* Date / Type 줄 */
+#projectModal .meta__row,
+#projectModal .meta_row {
+  display: flex;
+  align-items: baseline;
+  margin-top: 0.6rem;
+  font-family: var(--body-font);
+  font-size: 1.8rem;
+  color: var(--meta-sub);
+}
+#projectModal .meta__row strong,
+#projectModal .meta_row strong {
+  font-family: var(--body-font);
+  font-size: inherit;
+  font-weight: 700; /* ← 볼드 */
+  color: inherit;
+  min-width: 4.2rem;
+  margin-right: 0.6rem;
+}
+
+/* 값도 부모(.meta_row)에서 물려받게 */
+#projectModal #mDate,
+#projectModal #mType {
+  font: inherit;
+  color: inherit;
 }
 
 /* Footer */

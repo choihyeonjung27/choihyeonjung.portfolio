@@ -513,7 +513,7 @@ section {
 }
 
 /* 반응형 미디어쿼리 */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023.98px) {
   /* 기본 변수 조정 */
   :root {
     --menu-gap: 5rem;
@@ -620,7 +620,7 @@ section {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.98px) {
   /* 전체 레이아웃 너비 및 폰트 크기 조정 */
   .wrap {
     width: 100vw;
@@ -648,8 +648,11 @@ section {
     padding: 0; /* 패딩 초기화 */
     box-sizing: border-box;
   }
+  .menulist ul {
+    gap: 55px;
+  }
   .menulist ul li a {
-    font-size: var(--menu-font-size); /* 변수 사용 */
+    font-size: 2rem;
     text-decoration: none;
     color: #000;
     padding-top: 2rem;
@@ -695,7 +698,7 @@ section {
     box-sizing: border-box;
   }
   .about-text h2 {
-    font-size: 3.5rem;
+    font-size: 5rem;
     text-align: start;
   }
   .about-text h3 {
@@ -718,17 +721,20 @@ section {
     flex-direction: row; /* 요소를 가로로 나열 */
     justify-content: center; /* 가로축 중앙 정렬 */
     text-align: center;
-    gap: 35px;
+    gap: 30px;
+  }
+  .project h2 {
+    font-size: 5rem;
   }
 
   .profile > div {
     text-align: center;
   }
   .profile > div > h4 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
   .profile div ul li {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
   }
 
   /* Project 섹션 */
@@ -736,11 +742,11 @@ section {
     gap: 1.5rem;
   }
   .project-filter li a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .project-grid {
     grid-template-columns: 1fr; /* 1열로 변경 */
-    width: 90%;
+    width: 85%;
     gap: 1.5rem;
   }
   .project-card p {
@@ -753,11 +759,14 @@ section {
     gap: 20px;
     margin: 5% 0 10% 0;
   }
+  .footer h2 {
+    font-size: 5rem;
+  }
   .contact-menu ul {
     display: flex;
     flex-wrap: wrap; /* 요소가 넘치면 다음 줄로 이동 */
     justify-content: center; /* 전체 항목을 중앙으로 정렬 */
-    gap: 20px; /* 항목 간 간격 */
+    gap: 1px; /* 항목 간 간격 */
     width: 100%; /* 부모의 너비를 꽉 채우도록 설정 */
     padding: 0; /* 패딩 초기화 */
     list-style: none; /* 리스트 점 제거 */

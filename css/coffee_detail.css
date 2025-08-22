@@ -56,3 +56,23 @@
   z-index: 2;
   transform: scale(2.5); /*가운데 정렬 + 크기 1.3배 확대*/
 }
+/* 젤 위로 버튼 */
+.to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: inline-block; /* 뒤로가기 버튼과 동일 */
+  padding: 8px 12px; /* 뒤로가기 버튼과 동일 */
+  border: 1px solid #e5e7eb; /* 뒤로가기 버튼과 동일 */
+  border-radius: 999px; /* 뒤로가기 버튼과 동일 */
+  text-decoration: none; /* 뒤로가기 버튼과 동일 */
+  color: #111; /* 뒤로가기 버튼과 동일 */
+  background: #fff; /* 뒤로가기 버튼과 동일 */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04); /* 뒤로가기 버튼과 동일 */
+}
+
+.to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

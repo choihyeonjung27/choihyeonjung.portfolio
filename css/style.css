@@ -649,7 +649,7 @@ section {
     box-sizing: border-box;
   }
   .menulist ul {
-    gap: 55px;
+    gap: 40px;
   }
   .menulist ul li a {
     font-size: 1.6rem;
@@ -723,20 +723,21 @@ section {
   }
   .profile {
     display: flex;
-    flex-direction: row; /* 요소를 가로로 나열 */
+    flex-direction: column;
     justify-content: center; /* 가로축 중앙 정렬 */
     text-align: center;
-    gap: 32px;
+    gap: 15px;
   }
 
   .profile > div {
     text-align: center;
   }
   .profile > div > h4 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin-bottom: 0;
   }
   .profile div ul li {
-    font-size: 0.6rem;
+    font-size: 1.2rem;
   }
 
   /* Project 섹션 */
@@ -774,7 +775,7 @@ section {
     display: flex;
     flex-wrap: wrap; /* 요소가 넘치면 다음 줄로 이동 */
     justify-content: center; /* 전체 항목을 중앙으로 정렬 */
-    gap: 1px; /* 항목 간 간격 */
+    gap: 30px; /* 항목 간 간격 */
     width: 100%; /* 부모의 너비를 꽉 채우도록 설정 */
     padding: 0; /* 패딩 초기화 */
     list-style: none; /* 리스트 점 제거 */

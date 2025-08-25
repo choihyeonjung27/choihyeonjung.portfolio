@@ -86,7 +86,7 @@ section {
 .menulist ul li a {
   font-family: "AnguitaSans", sans-serif;
   font-weight: bold;
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-decoration: none;
   color: #000;
   padding-top: 2rem;
@@ -181,7 +181,7 @@ section {
 }
 .about-text p {
   font-family: "Pretendard", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin-bottom: 4%;
 }
 

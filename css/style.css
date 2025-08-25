@@ -181,7 +181,7 @@ section {
 }
 .about-text p {
   font-family: "Pretendard", sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 4%;
 }
 
@@ -214,7 +214,7 @@ section {
   justify-content: space-between;
   margin: 0 auto;
   border-radius: 10px;
-  gap: 100px;
+  gap: 97px;
 }
 .profile > div {
   flex: 1;
@@ -222,14 +222,14 @@ section {
 }
 .profile > div > h4 {
   font-family: "AnguitaSans", "Helvetica Neue", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   font-style: italic;
 }
 .profile div ul li {
   white-space: nowrap; /* 줄바꿈 금지 */
   font-family: "Pretendard", sans-serif;
-  font-size: 1.6em;
+  font-size: 1.5em;
   margin-bottom: 4%;
 }
 

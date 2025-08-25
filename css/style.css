@@ -513,7 +513,7 @@ section {
 }
 
 /* 반응형 미디어쿼리 */
-@media screen and (min-width: 768px) and (max-width: 1978.98px) {
+@media screen and (min-width: 768px) and (max-width: 1709.98px) {
   /* 기본 변수 조정 */
   :root {
     --menu-gap: 5rem;
@@ -549,7 +549,7 @@ section {
     padding: 40px 12%; /* 좌우 패딩 줄이기 */
   }
   .about-text p {
-    font-size: 1.3rem; /* 폰트 크기 줄이기 */
+    font-size: 1.8rem; /* 폰트 크기 줄이기 */
   }
   .about-img {
     width: 70%;
@@ -581,10 +581,10 @@ section {
     text-align: center; /* 텍스트 중앙 정렬 */
   }
   .profile > div > h4 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
   .profile div ul li {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
 
   /* Project 섹션 */
@@ -620,7 +620,7 @@ section {
   }
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 870.98px) {
   /* 전체 레이아웃 너비 및 폰트 크기 조정 */
   .wrap {
     width: 100vw;
@@ -652,7 +652,7 @@ section {
     gap: 40px;
   }
   .menulist ul li a {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-decoration: none;
     color: #000;
     padding-top: 2rem;
@@ -707,7 +707,7 @@ section {
     text-align: start;
   }
   .about-text p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: start;
   }
   .about-img {
@@ -733,11 +733,11 @@ section {
     text-align: center;
   }
   .profile > div > h4 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0;
   }
   .profile div ul li {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   /* Project 섹션 */

@@ -181,7 +181,7 @@ section {
 }
 .about-text p {
   font-family: "Pretendard", sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 4%;
 }
 
@@ -229,7 +229,7 @@ section {
 .profile div ul li {
   white-space: nowrap; /* 줄바꿈 금지 */
   font-family: "Pretendard", sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 4%;
 }
 
@@ -513,7 +513,7 @@ section {
 }
 
 /* 반응형 미디어쿼리 */
-@media screen and (min-width: 768px) and (max-width: 1709.98px) {
+@media screen and (min-width: 871px) and (max-width: 1665.98px) {
   /* 기본 변수 조정 */
   :root {
     --menu-gap: 5rem;

@@ -38,5 +38,15 @@
     "type": "motion-graphic",
     "action": "modal",
     "youtubeUrl": "https://youtu.be/Xk6E6bcK9es"
+  },
+  {
+    "id": 5,
+    "imgSrc": "images/cass.png",
+    "title": "카스 맥주 상세페이지",
+    "desc": "카스 레몬 스퀴즈 상세페이지",
+    "createdAt": "2025.08.26",
+    "type": "detail",
+    "action": "link",
+    "href": "cass_detail.html"
   }
 ]

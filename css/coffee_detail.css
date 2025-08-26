@@ -7,6 +7,10 @@
 
 /* 뒤로가기 버튼 */
 .detail-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
   display: inline-block;
   margin: 20px auto;
   padding: 8px 12px;
@@ -24,7 +28,9 @@
   max-width: 1000px; /* 원본보다 너무 크지 않게 제한 */
   margin: 0 auto;
   margin-bottom: 4%;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2),
+    /* 아래쪽 */ -8px 0 10px rgba(0, 0, 0, 0.1),
+    /* 왼쪽 */ 8px 0 10px rgba(0, 0, 0, 0.1); /* 오른쪽 */
 }
 
 /* 각 패널 */
@@ -69,7 +75,7 @@
   text-decoration: none; /* 뒤로가기 버튼과 동일 */
   color: #111; /* 뒤로가기 버튼과 동일 */
   background: #fff; /* 뒤로가기 버튼과 동일 */
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04); /* 뒤로가기 버튼과 동일 */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0); /* 뒤로가기 버튼과 동일 */
 }
 
 .to-top.show {

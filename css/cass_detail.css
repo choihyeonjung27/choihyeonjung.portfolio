@@ -1,0 +1,96 @@
+.detail-page {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: "Pretendard", system-ui, sans-serif;
+}
+
+/* 뒤로가기 버튼 */
+.detail-back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  display: inline-block;
+  margin: 20px auto;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* PNG 묶음 */
+.detail-col {
+  width: 100%;
+  max-width: 1000px; /* 원본보다 너무 크지 않게 제한 */
+  margin: 0 auto;
+  margin-bottom: 4%;
+  box-shadow: none;
+}
+
+/* 각 패널 */
+.panel {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 0; /* 이미지 사이 공백 제거 */
+}
+
+/* PNG 기본 */
+.panel__base {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none; /* 그림자 제거해서 경계 없애기 */
+  border-radius: 0; /* 둥근 모서리 제거 */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2),
+    /* 아래쪽 */ -8px 0 10px rgba(0, 0, 0, 0.1),
+    /* 왼쪽 */ 8px 0 10px rgba(0, 0, 0, 0.1); /* 오른쪽 */
+}
+
+.gif {
+  width: 100%;
+  max-width: var(--panel-max);
+  margin: 4% auto;
+  line-height: 0;
+  box-shadow: none;
+}
+
+.gif .panel__gif {
+  top: 50px;
+  bottom: 50px;
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 0 auto; /* 가로 중앙 */
+  /* box-shadow 사용 X → 이미지 형태대로 그림자 */
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
+}
+/* 젤 위로 버튼 */
+.to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: inline-block; /* 뒤로가기 버튼과 동일 */
+  padding: 8px 12px; /* 뒤로가기 버튼과 동일 */
+  border: 1px solid #e5e7eb; /* 뒤로가기 버튼과 동일 */
+  border-radius: 999px; /* 뒤로가기 버튼과 동일 */
+  text-decoration: none; /* 뒤로가기 버튼과 동일 */
+  color: #111; /* 뒤로가기 버튼과 동일 */
+  background: #fff; /* 뒤로가기 버튼과 동일 */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04); /* 뒤로가기 버튼과 동일 */
+}
+
+.to-top.show {
+  opacity: 1;
+  visibility: visible;
+}

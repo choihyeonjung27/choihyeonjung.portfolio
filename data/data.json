@@ -23,7 +23,7 @@
     "id": 3,
     "imgSrc": "images/coffee.png",
     "title": "커피머신 상세페이지",
-    "desc": "네스프레소 커피머신 상세페이지",
+    "desc": "네스프레소 커피머신 상세페이지/",
     "createdAt": "2025.08.02",
     "type": "detail",
     "action": "link",
@@ -48,5 +48,15 @@
     "type": "detail",
     "action": "link",
     "href": "cass_detail.html"
+  },
+  {
+    "id": 6,
+    "imgSrc": "images/team-project.png",
+    "title": "공모전",
+    "desc": "한국농업기술진흥원 공모전 참가 영상",
+    "createdAt": "2025.07.30",
+    "type": "motion-graphic",
+    "action": "modal",
+    "youtubeUrl": "https://youtu.be/pUvBvwJ5pqA"
   }
 ]

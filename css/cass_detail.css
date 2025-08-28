@@ -56,11 +56,12 @@
 }
 
 .gif {
-  width: 100%;
-  max-width: var(--panel-max);
-  margin: 4% auto;
-  line-height: 0;
-  box-shadow: none;
+  display: flex;
+  justify-content: center; /* 묶음 가운데 */
+  align-items: center;
+  gap: 30px;
+  width: 60%;
+  margin: 4% auto; /* 컨테이너 자체 가운데 */
 }
 
 .gif .panel__gif {

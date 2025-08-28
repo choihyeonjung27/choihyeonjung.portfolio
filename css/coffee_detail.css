@@ -28,6 +28,7 @@
   max-width: 1000px; /* 원본보다 너무 크지 않게 제한 */
   margin: 0 auto;
   margin-bottom: 4%;
+  background-color: #fbf8ee;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2),
     /* 아래쪽 */ -8px 0 10px rgba(0, 0, 0, 0.1),
     /* 왼쪽 */ 8px 0 10px rgba(0, 0, 0, 0.1); /* 오른쪽 */
@@ -61,6 +62,13 @@
   pointer-events: none;
   z-index: 2;
   transform: scale(2.5); /*가운데 정렬 + 크기 1.3배 확대*/
+}
+.panel-gif {
+  position: relative;
+  width: 40%;
+  height: auto; /* 가로 비율에 맞춰 세로 자동 */
+  margin: 0 auto;
+  display: block;
 }
 /* 젤 위로 버튼 */
 .to-top {

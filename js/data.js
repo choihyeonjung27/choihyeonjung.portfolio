@@ -1,6 +1,14 @@
-// =======================
+/* =======================
+   script.js (full)
+   - 카드 렌더링
+   - 필터
+   - 모달(YouTube/MP4)
+   - 툴 표시(tool chips)
+======================= */
+
+// -----------------------
 // 설정
-// =======================
+// -----------------------
 const DATA_URL = "data/data.json";
 let ALL_ITEMS = [];
 
@@ -11,6 +19,8 @@ const mTitle = document.getElementById("mTitle");
 const mDesc = document.getElementById("mDesc");
 const mDate = document.getElementById("mDate");
 const mType = document.getElementById("mType");
+// 툴 표시 영역(모달에 <ul id="mTools"> 추가해둔 경우)
+const mTools = document.getElementById("mTools");
 
 // YouTube iframe을 한 번만 만들어 재사용
 let yt;
@@ -25,15 +35,15 @@ let yt;
   );
   yt.setAttribute("allowfullscreen", "true");
   yt.style.width = "100%";
-  yt.style.aspectRatio = "16 / 9"; // 레이아웃 고정
-  yt.style.display = "none"; // 기본 숨김
-  // mp4 바로 뒤에 붙여 같은 영역을 공유
+  yt.style.aspectRatio = "16 / 9";
+  yt.style.display = "none";
+  // mp4 바로 뒤에 붙여 같은 공간 재사용
   mp4.insertAdjacentElement("afterend", yt);
 })();
 
-// =======================
+// -----------------------
 // 초기 로드
-// =======================
+// -----------------------
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const res = await fetch(DATA_URL);
@@ -48,11 +58,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// =======================
+// -----------------------
 // 카드 렌더링
-// =======================
+// -----------------------
 function renderCards(items) {
   const grid = document.getElementById("projectGrid");
+  if (!grid) return;
 
   grid.innerHTML = items
     .map(
@@ -64,7 +75,8 @@ function renderCards(items) {
       data-href="${item.href || ""}"
     >
       <div class="thumb" style="background-image:url('${item.imgSrc}')"></div>
-      <p>${item.title || ""}</p>
+      <p>${escapeHTML(item.title || "")}</p>
+
     </article>
   `
     )
@@ -79,7 +91,7 @@ function renderCards(items) {
 
       const action = (card.dataset.action || "").toLowerCase();
 
-      // 링크 타입은 새창으로 이동
+      // 링크 타입은 새창 이동
       if (action === "link" && card.dataset.href) {
         window.open(card.dataset.href, "_blank");
         return;
@@ -91,21 +103,23 @@ function renderCards(items) {
   });
 }
 
-// =======================
+// -----------------------
 // 필터(상단 탭)
-// =======================
+// -----------------------
 function bindFilters() {
   const ul = document.getElementById("filters");
+  if (!ul) return;
+
   ul.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
     e.preventDefault();
 
-    // on 표시 토글
+    // on 토글
     ul.querySelectorAll("li").forEach((li) => li.classList.remove("on"));
     a.parentElement.classList.add("on");
 
-    const href = a.getAttribute("href"); // "*", ".poster", ".filming", ...
+    const href = a.getAttribute("href"); // "*", ".poster", ...
     if (href === "*" || href === "#*") {
       renderCards(ALL_ITEMS);
       return;
@@ -118,14 +132,19 @@ function bindFilters() {
   });
 }
 
-// =======================
+// -----------------------
 // 모달
-// =======================
+// -----------------------
 function openModal(item) {
-  mTitle.textContent = item.title || "";
-  mDesc.textContent = item.desc || "";
-  mDate.textContent = item.createdAt || "";
-  mType.textContent = toKoreanType(item.type);
+  if (!modal) return;
+
+  mTitle && (mTitle.textContent = item.title || "");
+  mDesc && (mDesc.textContent = item.tool || "");
+  mDate && (mDate.textContent = item.createdAt || "");
+  mType && (mType.textContent = toKoreanType(item.type));
+
+  // 툴 표시 (모달에 영역이 있을 때만)
+  if (mTools) mTools.innerHTML = renderTools(item.tool);
 
   // 플레이어 초기화
   try {
@@ -136,7 +155,7 @@ function openModal(item) {
   yt.removeAttribute("src");
   yt.style.display = "none";
 
-  // youtubeUrl 우선, 없으면 mp4로 폴백
+  // youtubeUrl 우선, 없으면 mp4 폴백
   if (item.youtubeUrl) {
     const embed = toYouTubeEmbed(item.youtubeUrl, {
       autoplay: 1,
@@ -150,7 +169,7 @@ function openModal(item) {
   } else if (item.videoUrl) {
     mp4.src = item.videoUrl;
     mp4.style.display = "";
-    mp4.play().catch(() => {}); // 자동재생 실패는 무시
+    mp4.play().catch(() => {}); // 자동재생 실패 무시
   }
 
   modal.classList.add("is-open");
@@ -158,29 +177,35 @@ function openModal(item) {
 }
 
 function closeModal() {
+  if (!modal) return;
+
   modal.classList.remove("is-open");
   document.body.style.overflow = "";
+
   try {
     mp4.pause();
   } catch {}
   mp4.removeAttribute("src");
   mp4.style.display = "none";
-  yt.removeAttribute("src"); // src 제거로 재생 중지
+
+  yt.removeAttribute("src");
   yt.style.display = "none";
 }
 
 function bindModalClose() {
+  if (!modal) return;
+
   modal.addEventListener("click", (e) => {
-    // X 버튼 또는 반투명 배경(data-close 달린 곳)을 누르면 닫기
+    // X 버튼 또는 반투명 배경(data-close) 클릭 시 닫기
     if (e.target.closest("[data-close]")) {
       closeModal();
     }
   });
 }
 
-// =======================
+// -----------------------
 // 유틸
-// =======================
+// -----------------------
 function toKoreanType(t) {
   const map = {
     poster: "포스터",
@@ -224,7 +249,7 @@ function extractYouTubeId(url) {
       const seg = u.pathname.split("/").filter(Boolean)[0];
       if (seg) return seg;
     }
-    // https://www.youtube.com/shorts/VIDEOID 또는 /embed/VIDEOID
+    // /shorts/VIDEOID or /embed/VIDEOID
     if (u.pathname.startsWith("/shorts/") || u.pathname.startsWith("/embed/")) {
       const seg = u.pathname.split("/").filter(Boolean)[1];
       if (seg) return seg;
@@ -235,4 +260,33 @@ function extractYouTubeId(url) {
     if (/^[\w-]{11}$/.test(maybeId)) return maybeId;
   }
   return "";
+}
+
+// 툴 값을 chips HTML로 변환 (배열/콤마 문자열 모두 지원)
+function renderTools(tool) {
+  if (!tool || (Array.isArray(tool) && tool.length === 0)) return "";
+  const list = Array.isArray(tool)
+    ? tool
+    : String(tool)
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+
+  if (list.length === 0) return "";
+
+  return (
+    `<ul class="tool-chips">` +
+    list.map((t) => `<li>${escapeHTML(t)}</li>`).join("") +
+    `</ul>`
+  );
+}
+
+// XSS 방지용 간단 escape
+function escapeHTML(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }

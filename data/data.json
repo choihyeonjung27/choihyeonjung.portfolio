@@ -1,26 +1,16 @@
 [
   {
     "id": 1,
-    "imgSrc": "images/premiere.png",
-    "title": "대학사진관 홍보영상 편집",
-    "tool": "Tool: Premiere Pro",
-    "createdAt": "2025.08.11",
+    "imgSrc": "images/interview.png",
+    "title": "My Interview",
+    "tool": "Tool: After Effects,Premiere Pro",
+    "createdAt": "2025.09.01",
     "type": "filming",
     "action": "modal",
     "youtubeUrl": "https://youtu.be/LnF_DgzXPH4"
   },
   {
     "id": 2,
-    "imgSrc": "images/head rig.png",
-    "title": "head rig workflow",
-    "tool": "Tool: After Effects, Premiere Pro",
-    "createdAt": "2025.08.15",
-    "type": "motion-graphic",
-    "action": "modal",
-    "youtubeUrl": "https://youtu.be/AdO4AM-Kzwk"
-  },
-  {
-    "id": 3,
     "imgSrc": "images/coffee.png",
     "title": "커피머신 상세페이지",
     "tool": "Tool: Photoshop",
@@ -30,17 +20,7 @@
     "href": "coffee_detail.html"
   },
   {
-    "id": 4,
-    "imgSrc": "images/typography.png",
-    "title": "typography copy",
-    "tool": "Tool: After Effects",
-    "createdAt": "2025.07.25",
-    "type": "motion-graphic",
-    "action": "modal",
-    "youtubeUrl": "https://youtu.be/KUUkDzpBdGE"
-  },
-  {
-    "id": 5,
+    "id": 3,
     "imgSrc": "images/cass.png",
     "title": "카스 맥주 상세페이지",
     "tool": "Tool: Photoshop",
@@ -48,6 +28,26 @@
     "type": "detail",
     "action": "link",
     "href": "cass_detail.html"
+  },
+  {
+    "id": 4,
+    "imgSrc": "images/cass-ad.png",
+    "title": "카스 맥주 광고영상",
+    "tool": "Tool: After Effects, Premiere Pro",
+    "createdAt": "2025.08.28",
+    "type": "filming",
+    "action": "modal",
+    "youtubeUrl": "https://youtu.be/laGqvP6SelI"
+  },
+  {
+    "id": 5,
+    "imgSrc": "images/typography.png",
+    "title": "typography copy",
+    "tool": "Tool: After Effects, Premiere Pro",
+    "createdAt": "2025.07.25",
+    "type": "motion-graphic",
+    "action": "modal",
+    "youtubeUrl": "https://youtu.be/UOJAiG6IsbE"
   },
   {
     "id": 6,
@@ -58,5 +58,25 @@
     "type": "motion-graphic",
     "action": "modal",
     "youtubeUrl": "https://youtu.be/pUvBvwJ5pqA"
+  },
+  {
+    "id": 7,
+    "imgSrc": "images/premiere.png",
+    "title": "대학사진관 홍보영상 편집",
+    "tool": "Tool: Premiere Pro",
+    "createdAt": "2025.08.11",
+    "type": "filming",
+    "action": "modal",
+    "youtubeUrl": "https://youtu.be/LnF_DgzXPH4"
+  },
+  {
+    "id": 8,
+    "imgSrc": "images/head rig.png",
+    "title": "head rig workflow",
+    "tool": "Tool: After Effects, Premiere Pro",
+    "createdAt": "2025.08.15",
+    "type": "motion-graphic",
+    "action": "modal",
+    "youtubeUrl": "https://youtu.be/AdO4AM-Kzwk"
   }
 ]

@@ -66,7 +66,7 @@ section {
 .logobox a {
   font-family: "AnguitaSans", sans-serif;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-style: italic;
   padding-top: 2rem;
 }
@@ -181,7 +181,7 @@ section {
 }
 .about-text p {
   font-family: "Pretendard", sans-serif;
-  font-size: 1.7rem;
+  font-size: 2rem;
   margin-bottom: 4%;
 }
 
@@ -222,14 +222,14 @@ section {
 }
 .profile > div > h4 {
   font-family: "AnguitaSans", "Helvetica Neue", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   font-style: italic;
 }
 .profile div ul li {
   white-space: nowrap; /* 줄바꿈 금지 */
   font-family: "Pretendard", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-bottom: 4%;
 }
 
@@ -339,6 +339,15 @@ section {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
 }
 .modal__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  max-width: 90vw;
+  max-height: 80vh;
+  margin: 0 auto;
+  padding: 16px;
+  border-radius: 12px;
   background: #000;
 }
 .modal__media video {
@@ -349,6 +358,45 @@ section {
   max-height: 65vh;
   display: block;
 }
+#mImage {
+  display: none; /* 기본은 JS에서 보이게 켜줌 */
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  background: #000;
+}
+/* 좌우 버튼 */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  border: 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000;
+}
+.nav-btn.prev {
+  left: 16px;
+}
+.nav-btn.next {
+  right: 16px;
+}
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
 /* 배경 클릭 닫기용 (덮개가 전체를 차도록) */
 .modal__backdrop {
   position: absolute;

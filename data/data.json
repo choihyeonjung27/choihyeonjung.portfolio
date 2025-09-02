@@ -5,7 +5,7 @@
     "title": "My Interview",
     "tool": "Tool: After Effects,Premiere Pro",
     "createdAt": "2025.09.01",
-    "type": "filming",
+    "type": ["filming", "interview"],
     "action": "modal",
     "youtubeUrl": "https://youtu.be/LnF_DgzXPH4"
   },
@@ -35,7 +35,7 @@
     "title": "카스 맥주 광고영상",
     "tool": "Tool: After Effects, Premiere Pro",
     "createdAt": "2025.08.28",
-    "type": "filming",
+    "type": ["filming", "ad"],
     "action": "modal",
     "youtubeUrl": "https://youtu.be/srDNOciqJDE"
   },
@@ -78,5 +78,65 @@
     "type": "motion-graphic",
     "action": "modal",
     "youtubeUrl": "https://youtu.be/AdO4AM-Kzwk"
+  },
+  {
+    "id": 9,
+    "imgSrc": "images/poster01.png",
+    "fullImg": "images/poster-01.png",
+    "title": "poster",
+    "tool": "Tool: Photoshop, Illustrator",
+    "createdAt": "2025.06.20",
+    "type": "poster",
+    "action": "modal"
+  },
+  {
+    "id": 10,
+    "imgSrc": "images/poster02.png",
+    "fullImg": "images/poster-02.png",
+    "title": "poster",
+    "tool": "Tool: Photoshop, Illustrator",
+    "createdAt": "2025.07.24",
+    "type": "poster",
+    "action": "modal"
+  },
+  {
+    "id": 11,
+    "imgSrc": "images/poster03.png",
+    "fullImg": "images/poster-03.png",
+    "title": "poster",
+    "tool": "Tool: Photoshop, Illustrator",
+    "createdAt": "2025.06.20",
+    "type": "poster",
+    "action": "modal"
+  },
+  {
+    "id": 12,
+    "imgSrc": "images/poster04.png",
+    "fullImg": "images/poster-04.png",
+    "title": "poster",
+    "tool": "Tool: Photoshop, Illustrator",
+    "createdAt": "2025.04.29",
+    "type": "poster",
+    "action": "modal"
+  },
+  {
+    "id": 13,
+    "imgSrc": "images/poster05.png",
+    "fullImg": "images/poster-05.png",
+    "title": "poster",
+    "tool": "Tool: Photoshop, Illustrator",
+    "createdAt": "2025.09.01",
+    "type": "poster",
+    "action": "modal"
+  },
+  {
+    "id": 14,
+    "imgSrc": "images/poster06.png",
+    "fullImg": "images/poster-06.png",
+    "title": "poster",
+    "tool": "Tool: Photoshop, Illustrator",
+    "createdAt": "2025.09.01",
+    "type": "poster",
+    "action": "modal"
   }
 ]

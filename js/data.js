@@ -265,14 +265,28 @@ function bindNavButtons() {
       showNext();
     });
   const openOriginal = document.getElementById("openOriginal");
-  if (openOriginal)
+  if (openOriginal) {
     openOriginal.addEventListener("click", (e) => {
       e.stopPropagation();
       const item = RENDERED_ITEMS[CURRENT_INDEX];
       const full = item?.fullImg || item?.imgSrc;
       if (full) window.open(full, "_blank");
     });
+  }
+
+  if (mImage) {
+    const openIfVisible = (e) => {
+      if (getComputedStyle(mImage).display === "none") return;
+      e.stopPropagation();
+      const item = RENDERED_ITEMS[CURRENT_INDEX];
+      const full = item?.fullImg || item?.imgSrc;
+      if (full) window.open(full, "_blank");
+    };
+    mImage.addEventListener("click", openIfVisible);
+    mImage.addEventListener("dblclick", openIfVisible); // 원하면 유지
+  }
 }
+
 function showPrev() {
   if (CURRENT_INDEX <= 0) return;
   openModalByIndex(CURRENT_INDEX - 1);

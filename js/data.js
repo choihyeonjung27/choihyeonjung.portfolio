@@ -8,7 +8,9 @@
 ======================= */
 
 // ----------------------- 설정 -----------------------
-const DATA_URL = "data/data.json";
+// 수정(버전 태그 하나 붙이기)
+const APP_ASSET_VERSION = "2025-09-02-01"; // 임의의 값
+const DATA_URL = `data/data.json?v=${APP_ASSET_VERSION}`;
 let ALL_ITEMS = [];
 let RENDERED_ITEMS = []; // 현재 그리드에 표시 중인 목록
 let CURRENT_INDEX = -1; // 모달에서 열려있는 인덱스 (RENDERED_ITEMS 기준)

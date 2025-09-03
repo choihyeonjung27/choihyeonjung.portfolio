@@ -9,7 +9,7 @@
 
 // ----------------------- 설정 -----------------------
 // 수정(버전 태그 하나 붙이기)
-const APP_ASSET_VERSION = "2025-09-02-01"; // 임의의 값
+const APP_ASSET_VERSION = "2025-09-02-yt1"; // 임의값
 const DATA_URL = `data/data.json?v=${APP_ASSET_VERSION}`;
 let ALL_ITEMS = [];
 let RENDERED_ITEMS = []; // 현재 그리드에 표시 중인 목록
